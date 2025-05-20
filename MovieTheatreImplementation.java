@@ -7,7 +7,7 @@ public class MovieTheatreImplementation {
     public MovieTheatreImplementation(int rows, int cols) {
         seats = new int[rows][cols];
         for (int i = 0; i < rows; i++) {
-            Arrays.fill(seats[i], Integer.MIN_VALUE);  // All seats available
+            Arrays.fill(seats[i], Integer.MIN_VALUE);
         }
     }
 
@@ -67,7 +67,12 @@ public class MovieTheatreImplementation {
         theatre.reserveSeat(2, 3);
         theatre.reserveSeat(3, 3);
         theatre.reserveSeat(1, 2);
-        theatre.reserveSeat(2, 3); // Already taken, should suggest
+        theatre.reserveSeat(0, 0);
+
+        // if already taken
+        theatre.reserveSeat(2, 3);
+
+        //for cancellation
         theatre.cancelSeat(3, 3);
         theatre.printSeatingChart();
     }
